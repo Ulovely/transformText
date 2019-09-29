@@ -3,6 +3,8 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+import tfText from "./components/tf-text/tf-text.vue";
+Vue.component("tfText",tfText);
 Vue.prototype.Common = {
 	Config: {
 		header: {

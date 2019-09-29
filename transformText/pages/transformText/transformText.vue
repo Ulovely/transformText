@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<view class="fontShowBox">
-			<!-- <tfText :txt='txt'></tfText> -->
+			<!-- <tfText txt='猪'></tfText>直接渲染，就用这个
+			<tfText :txt='txt'></tfText>动态渲染，就用这个 -->
 			<tfText :txt='txt' :languageChange="type"></tfText> <!-- 如果需要当页切换语言，就用这个 -->
 		</view>
 		<picker :range="language" @change="languageChange" :value="languageIndex" range-key="txt">
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-	import transformText from "@/components/transformText/transformText.vue"
+	import tfText from "@/components/tf-text/tf-text.vue"
 	export default {
 		data() {
 			return {
@@ -36,7 +37,7 @@
 			}
 		},
 		components:{
-			tfText:transformText
+			tfText
 		},
 		onLoad() {
 			var type = uni.getStorageSync("LANGUAGE")
