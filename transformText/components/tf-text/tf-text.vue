@@ -1,5 +1,7 @@
 <template>
-	<block>{{returnTxt}}</block>
+	<text v-if="label&&label=='text'" :class="tclass" :style="tstyle">{{returnTxt}}</text>
+	<view v-else-if="label&&label=='view'" :class="tclass" :style="tstyle">{{returnTxt}}</view>
+	<block v-else>{{returnTxt}}</block>
 </template>
 
 <script>
@@ -10,6 +12,18 @@
 			txt: {
 			  type: String,
 			  default: ' '
+			},
+			label:{
+			  type: String,
+			  default: ""
+			},
+			tclass:{
+			  type: String,
+			  default: " "
+			},
+			tstyle:{
+			  type: String,
+			  default: " "
 			},
 			languageChange:{
 			  type: String,
