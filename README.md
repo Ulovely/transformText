@@ -39,31 +39,28 @@ Vue.prototype.Common = {
 ```html
 <tfText txt='猪'></tfText><!-- 直接渲染，就用这个 -->
 或
-<tfText :txt='txt'></tfText><!-- 动态渲染，就用这个 -->
+<tfText txt="猪" label="text" tclass="testClass" tstyle="color:red"></tfText><!-- text组件用这个 -->
 或
-<tfText :txt='txt' :languageChange="type"></tfText> <!-- 如果需要当页切换语言，就用这个 -->
+<tfText txt="猪" label="view" tclass="testClass" tstyle="color:red"></tfText><!-- view组件用这个 -->
+或
+<tfText :txt='txt'></tfText><!-- 动态渲染，就用这种 -->
 ```
+
+在 ``script`` 中reload说明
+当前页面切换语言需要用到
 
 **tfText 属性说明：**
 
 |属性名		|类型	|默认值	                    |说明					|
 |---		|----	|---	                    |---					|
-|txt	|String	|''	            	|简体中文	|
-|languageChange		|String	|'zh-cn'			|动态改变文本语言类型|
-
-
-**languageChange 值说明：**
-
-|值 		|类型	|说明					|
-|---		|----	|---					|
-|'zh-cn'	|String	|简体中文				|
-|'zh-tw'	|String	|繁体中文				|
-|'en'		|String	|英文，需到components/language.json里设置|
-|自定义语言类型	|String	|自定义语言类型，需到components/language.json里设置|
+|txt		|String	|''	            			|简体中文				|
+|label		|String	|''	            			|组件类型				|
+|tclass		|String	|''	            			|组件类名				|
+|tstyle		|String	|''	            			|组件样式				|
 
 **更新记录：**
 
-新增多语言切换插件
+当前页面重新渲染、添加了组件类型、组件类名、组件样式
 
 **感谢：**
 
